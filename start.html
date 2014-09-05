@@ -1,0 +1,60 @@
+<head> 
+  <title>start</title> 
+</head> 
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="span10">
+        <h1>The Amazing Gistlister</h1>
+      </div>
+      <div class="span2">{{> loginButtons}}</div>
+    </header>
+
+    <div class="row">
+      <nav class="span3">
+        {{> groupGists}}
+      </nav>
+
+      {{>  gistViewer }}
+
+    </div>
+  </div>
+</body>
+
+<template name="gistViewer">
+  <section class="viewer span9">
+    <p>{{fileContent}}</p>
+  </section>
+</template>
+
+<template name="groupGists">
+  {{> groupList}}
+  <hr/>
+  {{>  gistsList}}
+</template>
+
+<template name="memberName">
+  <li><a href="#">{{name}}</a></li>
+</template>
+
+<template name="groupList">
+  <h1>Usernames</h1>
+  <ul class="unstyled">
+    {{#each names}}
+      {{> memberName}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="gistsList">
+  <h1>Gists</h1>
+  <ul class="unstyled">
+    {{#each gists}}
+      {{> gistsListItem }}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="gistsListItem">
+  <li><a href="#">{{title}}</a></li>
+</template>
