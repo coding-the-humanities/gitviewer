@@ -1,0 +1,20 @@
+New goals for the Dashboard
+
+    \* Systeem waar studenten met hun GitHub kunnen inloggen en waar ze een
+    profiel kunnen zien.
+
+    \* Een plek waar studenten kunnen inloggen naar hun GitHub.
+
+
+
+    \* Minder in product denken maar in features
+
+    \* Mobile first to Desktop development
+
+    \* Formatting code in gitviewer/plug-in + libraries for sysntax highlighting
+
+    \* What information dont we get from GitHub: UvA-id + Full name (How do we
+    store the users on our side) for example fill in he form when signed in for
+    the first time.
+
+
