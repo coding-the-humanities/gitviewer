@@ -1,6 +1,13 @@
 /* CSS declarations go here */
 .viewer {
-  height: 80vh;
+  height: 60vh;
   background-color: black;
   color: white;
 }
+
+.chat {
+	height: 28vh;
+	background-color: gray;
+	color:white;
+	font-size: 20px;
+} 

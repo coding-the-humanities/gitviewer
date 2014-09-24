@@ -1,5 +1,5 @@
 if (Meteor.isClient) {
-  Session.set('fileContent', "iour conentn coomesh ere");
+  Session.set(fileContent);
 
   Template.groupList.helpers({
     names: function(){
