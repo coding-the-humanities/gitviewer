@@ -17,14 +17,37 @@
 
       {{>  gistViewer }}
 
-      {{>  chatTemplate }}
+
+      {{>  client }}
+
+   
 
     </div>
   </div>
 </body>
 
+<template name="client">
+  <div id=" identityForm">
+  <section class="form span3">
+    <p>Please register to get your personal Dashboard!</p>
+  </section>
+    {{> identityForm}}
+  </div>
+</template>
+
+<!-- Preferably pop-up after GitHub login-->
+<template name='identityForm'>
+  <form id="login-form" action="action">
+      <div>
+        <input type="email" id="login-email" value="email"/>
+        <input id="uva_ID" type="text" value="UVA-ID"/>
+        <input type="submit" id="login-button" value="Sign in" />
+     </div>
+   </form> 
+</template>
 
 
+<!-- removed for now -->
 <template name="chatTemplate">
   <section class="chat span12">
     <p>luluhgfhgvfjjtfvjgtfjtfyrdhesxesjyrdligliyglutdcmyjsrdk</p>

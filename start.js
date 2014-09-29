@@ -1,5 +1,9 @@
+
+
 if (Meteor.isClient) {
   Session.set(fileContent);
+
+  Students = new Meteor.Collection("students");
 
   Template.groupList.helpers({
     names: function(){
@@ -19,6 +23,31 @@ if (Meteor.isClient) {
     }
   });
 
+Template.login.events({
+
+    'submit #login-form' : function(e, t){
+      e.preventDefault();
+      // retrieve the input field values
+      var email = t.find('#login-email').value
+        , uvaID = t.find('#login-uvaID').value;
+
+        // Trim and validate your fields here.... 
+
+        // If validation passes, supply the appropriate fields to the
+        // Meteor.loginWithPassword() function.
+        Meteor.login(email, uvaID, function(err){
+        if (err)
+          // The user might not have been found, or their passwword
+          // could be incorrect. Inform the user that their
+          // login attempt has failed. 
+          return "try again";
+        else
+          // The user has been logged in.
+        return "you have been registered";
+      });
+         return false; 
+      }
+  });
 
   Template.memberName.events({
     'click': function(){
@@ -50,6 +79,8 @@ if (Meteor.isClient) {
       });
     }
   });
+
+
 }
 
 if (Meteor.isServer) {
@@ -59,7 +90,12 @@ if (Meteor.isServer) {
     version: "3.0.0"
   });
 
+
+  
+}
+
   Meteor.methods({
+
 
     getGistContent: function(){
       // todo
@@ -79,6 +115,7 @@ if (Meteor.isServer) {
 
         github.gists.getFromUser({"user": userName}, function(err, data){
           done(null, data);
+
         });
 
       });
@@ -86,6 +123,7 @@ if (Meteor.isServer) {
       return gists.result;
     }
   });
-  Meteor.startup(function () {
-  });
-}
+  
+     Meteor.startup(function () {
+    }
+  ); 
